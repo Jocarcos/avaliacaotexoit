@@ -28,11 +28,11 @@ O projeto contém os seguintes serviços acessados pela URL: http://localhost:10
 # /getintervalo
 Este serviço obtém o produtor com maior intervalo entre dois prêmios consecutivos, e o que
 obteve dois prêmios mais rápido.
-# Requent
+# Request
 GET http://localhost:1000/vencedores/getintervalo
 # Response
 JSON
-
+'
 {
     "min": [
         {
@@ -57,14 +57,14 @@ JSON
         }
     ]
 }
-
+'
 # /getvencedorano
 Este serviço é responsavel pela consulta do vencedor ou vencedores do ano indicado.
 # Request
 GET http://localhost:1000/vencedores/getvencedorano/2018
 # Response
 JSON
-
+'
 [
     {
         "id": 197,
@@ -75,7 +75,7 @@ JSON
         "winner": "yes"
     }
 ]
-
+'
 # getindicadosano
 Este serviço é responsável pela consulta dos filems indicados no ano.
 # Request
@@ -83,7 +83,7 @@ GET http://localhost:1000/vencedores/getindicadosano/2019
 # Response
 JSON
 
-[
+'[
     {
         "id": 202,
         "year": 2019,
@@ -124,33 +124,33 @@ JSON
         "producers": "Avi Lerner, Kevin King Templeton, Yariv Lerner, and Les Weldon",
         "winner": null
     }
-]
+]'
 
 # post
 Este serviço é responsavel para a inclusão de um novo indicado.
 # Request
-POST http://localhost:1000/vencedores/post
+POST http://localhost:1000/vencedores/post 
 JSON
 
-    {
+'    {
         "year": 2020,
         "title": "OutroTeste",
         "studios": "Universal Pictures",
         "producers": "Teste",
         "winner": "yes"
-    }
+    }'
 
 # Response
 JSON
 
-{
+'{
     "id": 207,
     "year": 2020,
     "title": "OutroTeste",
     "studios": "Universal Pictures",
     "producers": "Teste",
     "winner": "yes"
-}
+}'
 
 # put
 Este serviço é responsavel para realizar a alteração/atualização de uma indicação
@@ -158,24 +158,24 @@ Este serviço é responsavel para realizar a alteração/atualização de uma in
 PUT http://localhost:1000/vencedores/put
 JSON
 
-    {
+'    {
     	"id": 207,
         "year": 2019,
         "title": "Teste",
         "studios": "Universal Pictures",
         "producers": "Teste",
         "winner": "no"
-    }
+    }'
 
 # Response
 JSON
 
-{
+'{
     "id": 207,
     "year": 2019,
     "title": "Teste",
     "studios": "Universal Pictures",
     "producers": "Teste",
     "winner": "no"
-}
+}'
 
