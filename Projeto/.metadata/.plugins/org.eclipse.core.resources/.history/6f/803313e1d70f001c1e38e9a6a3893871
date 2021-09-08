@@ -1,0 +1,13 @@
+package com.vencedorpiorfilme.entidades;
+
+import javax.persistence.Entity;
+
+@Entity
+public class VencedorPiorFilme {
+
+	private int year;
+	private String title;
+	private String studios;
+	private String producers;
+	private Boolean winner;	
+}

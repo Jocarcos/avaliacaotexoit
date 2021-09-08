@@ -1,0 +1,1 @@
+INSERT INTO tb_vencedor(YEAR,TITLE,STUDIOS,PRODUCERS,WINNER) values (2021, 'Titulo', 'studio', 'produtor', 'yes')

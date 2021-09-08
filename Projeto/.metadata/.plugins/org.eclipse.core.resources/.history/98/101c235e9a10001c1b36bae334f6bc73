@@ -1,0 +1,57 @@
+package com.vencedorpiorfilme.repositories;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.vencedorpiorfilme.entidades.IntervaloPremios;
+import com.vencedorpiorfilme.entidades.Min;
+import com.vencedorpiorfilme.entidades.VencedorPiorFilme;
+
+public class VencedorPiorFilmeCN {
+	
+	@Autowired
+	private static VencedorPiorFilmeRepository repo;
+	
+	
+	public static IntervaloPremios findInterval() {
+		IntervaloPremios intervalo = new IntervaloPremios();
+		List<VencedorPiorFilme> lista = repo.findByOrderByProducersAscYearAsc();
+		List<Min> intervalosList = new ArrayList<>();
+		String producerAtual = "";
+		Integer anoAtual = 0;
+		Integer proximoAno = 0;
+		Integer interval = 0;
+		Integer intervalMin = 0;
+		Integer intervalMax = 0;
+		
+        for(VencedorPiorFilme item : lista){
+            if(item.getProducers().equals(producerAtual)) {
+            	proximoAno = item.getYear();
+            	interval = proximoAno - anoAtual;
+            	
+            	Min min = new Min();
+            	min.setProducer(producerAtual);
+            	min.setInterval(interval);
+            	min.setPreviousWin(anoAtual);
+            	min.setFollwingWin(proximoAno);
+            	
+            	intervalosList.add(min);
+            	
+            	if(intervalMin == 0 || intervalMin > interval) {
+            		intervalMin = interval;
+            	}
+            	
+            	if(intervalMax == 0 || intervalMax < interval) {
+            		intervalMax = interval;
+            	}
+            }else {
+            	producerAtual = item.getProducers();
+            	anoAtual = item.getYear();
+            }
+        }
+		
+		return intervalo;
+	}
+}

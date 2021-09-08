@@ -1,0 +1,22 @@
+package com.vencedorpiorfilme.repositories;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.vencedorpiorfilme.entidades.VencedorPiorFilme;
+
+public class VencedorPiorFilmeCN {
+	
+	public static List<VencedorPiorFilme> findVencedores() {
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("example-unit");
+	      EntityManager em = entityManagerFactory.createEntityManager();
+	      Query query = em.createQuery("select id, producers, studios, title, winner, year from TB_VENCEDOR where producers in (select producers from (SELECT count(id) as quant ,producers FROM TB_VENCEDOR group by producers)quantpre where quant > 1)");
+	      List<VencedorPiorFilme> resultList = query.getResultList();
+	      em.close();
+	      return resultList;
+	}
+}

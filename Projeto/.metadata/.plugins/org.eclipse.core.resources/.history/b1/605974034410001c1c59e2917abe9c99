@@ -1,0 +1,17 @@
+package com.vencedorpiorfilme.repositories;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.vencedorpiorfilme.entidades.VencedorPiorFilme;
+
+public class VencedorPiorFilmeCN {
+	
+	public static List<VencedorPiorFilme> findInterval() {
+		List<VencedorPiorFilme>
+	}
+}

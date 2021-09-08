@@ -1,0 +1,14 @@
+package com.vencedorpiorfilme.repositories;
+
+import com.vencedorpiorfilme.entidades.IntervaloPremios;
+
+public class VencedorPiorFilmeCN {
+	
+	public static IntervaloPremios findInterval() {
+		IntervaloPremios intervalo = new IntervaloPremios();
+		
+		
+		
+		return intervalo;
+	}
+}

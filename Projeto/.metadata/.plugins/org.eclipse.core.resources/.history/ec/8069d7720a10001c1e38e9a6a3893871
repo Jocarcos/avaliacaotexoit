@@ -1,0 +1,16 @@
+package com.vencedorpiorfilme.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import java.util.List;
+import com.vencedorpiorfilme.entidades.VencedorPiorFilme;
+
+public interface VencedorPiorFilmeRepository extends JpaRepository<VencedorPiorFilme, Integer>{
+	
+	public List<VencedorPiorFilme> findByYear(@Param("year") Integer year);
+	
+	@Query ( "SELECT v from tb_vencedor v where v.winner = 'yes' and v.year =: ano" )     
+	public List<VencedorPiorFilme> findByVencendorAno( @Param ( "ano" ) Integer ano );  
+
+}
