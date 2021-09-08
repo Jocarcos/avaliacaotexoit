@@ -32,7 +32,7 @@ obteve dois prêmios mais rápido.
 GET http://localhost:1000/vencedores/getintervalo
 # Response
 JSON
-'''
+```
 {
     "min": [
         {
@@ -57,7 +57,7 @@ JSON
         }
     ]
 }
-'''
+```
 # /getvencedorano
 Este serviço é responsavel pela consulta do vencedor ou vencedores do ano indicado.
 # Request
