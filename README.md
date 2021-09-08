@@ -82,8 +82,8 @@ Este serviço é responsável pela consulta dos filems indicados no ano.
 GET http://localhost:1000/vencedores/getindicadosano/2019
 # Response
 JSON
-
-'[
+'
+[
     {
         "id": 202,
         "year": 2019,
@@ -124,21 +124,23 @@ JSON
         "producers": "Avi Lerner, Kevin King Templeton, Yariv Lerner, and Les Weldon",
         "winner": null
     }
-]'
+]
+'
 
 # post
 Este serviço é responsavel para a inclusão de um novo indicado.
 # Request
 POST http://localhost:1000/vencedores/post 
 JSON
-
-'    {
+'
+   {
         "year": 2020,
         "title": "OutroTeste",
         "studios": "Universal Pictures",
         "producers": "Teste",
         "winner": "yes"
-    }'
+    }
+'    
 
 # Response
 JSON
