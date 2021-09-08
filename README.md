@@ -25,7 +25,7 @@ A classe responsável pela execução da API é VencedorPiorFilmeController ela 
 # Rest API
 O projeto contém os seguintes serviços acessados pela URL: http://localhost:1000/vencedores
 
-# /getintervalo
+# /vencedores/getintervalo
 Este serviço obtém o produtor com maior intervalo entre dois prêmios consecutivos, e o que
 obteve dois prêmios mais rápido.
 # Request
@@ -58,7 +58,7 @@ JSON
     ]
 }
 ```
-# /getvencedorano
+# /vencedores/getvencedorano
 Este serviço é responsavel pela consulta do vencedor ou vencedores do ano indicado.
 # Request
 GET http://localhost:1000/vencedores/getvencedorano/2018
@@ -76,7 +76,7 @@ JSON
     }
 ]
 ```
-# getindicadosano
+# /vencedores/getindicadosano
 Este serviço é responsável pela consulta dos filems indicados no ano.
 # Request
 GET http://localhost:1000/vencedores/getindicadosano/2019
@@ -127,7 +127,7 @@ JSON
 ]
 ```
 
-# post
+# /vencedores/post
 Este serviço é responsavel para a inclusão de um novo indicado.
 # Request
 POST http://localhost:1000/vencedores/post 
@@ -156,7 +156,7 @@ JSON
 }
 ```
 
-# put
+# /vencedores/put
 Este serviço é responsavel para realizar a alteração/atualização de uma indicação 
 # Request
 PUT http://localhost:1000/vencedores/put 
