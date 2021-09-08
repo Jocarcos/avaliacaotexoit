@@ -31,6 +31,7 @@ import com.vencedorpiorfilme.repositories.VencedorPiorFilmeRepository;
 @RequestMapping(value="/vencedores")
 public class VencedorPiorFilmeController {
 
+	
 	@Autowired
 	private VencedorPiorFilmeRepository repo;
 	
